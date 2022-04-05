@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const Navbar = () => {
+  const items = useSelector((state) => state.cart);
   return (
     <div className="bg-gray-900">
       <nav className="container mx-auto flex items-center justify-between py-4">
@@ -19,7 +22,7 @@ const Navbar = () => {
           >
             Cart
           </Link>
-          <span className="font-bold text-lg">Items : 0</span>
+          <span className="font-bold text-lg">Items : {items.length}</span>
         </div>
       </nav>
     </div>
